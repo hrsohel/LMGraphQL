@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide the default scroll bar */
+body::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: #333;
+}
+
+/* Add styling to the thumb */
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 1em;
+}
+
+/* Add hover styling to the thumb */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(166, 158, 158);
+}
+
+input[type="datetime-local"]::-webkit-input-placeholder {
+  /* Hide the default placeholder text */
+  color: transparent;
+}
+
+.home-main {
+  background: url("../public/images/bg-img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.home-input input {
+  border-radius: 10px 0 0 10px;
+}
+.home-input .submit {
+  border-radius: 0px 10px 10px 0px;
+}
+.main-button {
+  animation: animate .5s ease-out;
+}
+
+header {
+  position: relative;
+}
+
+.messenger {animation: messenger 1s ease-in-out infinite alternate;}
+
+@media(max-width: 768px) {
+  header {
+    border-bottom: 1px solid white;
+  }
+  header nav {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #304673;
+    position: absolute;
+    top: 101%; right: 0;
+    display: none;
+    z-index: 1000;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+  .sideBar {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+  }
+  .messenger {
+    color: #304673;
+  }
+  .profile:hover .profile-form {
+    display: none;
+  }
+}
+
+.showMenu {
+  animation: animate2 1s ease-out;
+}
+.profile-form {
+  display: none;
+  background-color: rgba(255, 255, 255, .3);
+}
+.profile:hover .profile-form {display: block;}
+@keyframes animate2 {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  from {
+    transform: scale(.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes messenger {
+  from {transform: scale(.9);}
+  to {transform: scale(1);}
+}
